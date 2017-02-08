@@ -37,3 +37,7 @@ profile
 
 #Private Certificates
 *.p8
+*.key
+*.crt
+*.csr
+*.key.pub
