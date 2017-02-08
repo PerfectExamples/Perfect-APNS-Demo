@@ -13,6 +13,9 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(tempTokenComplete), name: .addSuccessful, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(tempTokenFailed), name: .addFailure, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +23,12 @@ class NewsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    func tempTokenComplete() {
+        print("Token Complete")
+    }
+    
+    func tempTokenFailed() {
+        print("Token Failure")
+    }
 }
 

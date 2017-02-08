@@ -29,7 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        DataService.instance.registerDeviceToken(deviceToken: deviceToken)
+        let tokenString = deviceToken.map{ String(format: "%02x", $0) }.joined()
+        print("Received a Token \(tokenString)")
+        DataService.instance.registerDeviceToken(deviceToken: tokenString)
     }
 
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {

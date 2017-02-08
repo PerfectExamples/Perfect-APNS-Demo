@@ -20,7 +20,7 @@ class DataService {
         }
     }
     
-    public func registerDeviceToken(deviceToken: Data) {
+    public func registerDeviceToken(deviceToken: String) {
         
         let urlPath = "\(apiEndpoint)/register/device"
         guard let endpoint = URL(string: urlPath) else {

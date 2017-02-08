@@ -20,6 +20,16 @@
 import PerfectLib
 import PerfectHTTP
 import PerfectHTTPServer
+import PerfectNotifications
+
+// your app id. we use this as the configuration name, but they do not have to match
+let notificationsAppId = "com.ryanmcollins.Perfect-News"
+
+let apnsKeyIdentifier = "L5PQ5652T4"
+let apnsTeamIdentifier = "HZW5PR43M5"
+let apnsPrivateKey = "./APNsAuthKey_L5PQ5652T4.p8"
+
+NotificationPusher.addConfigurationIOS(name: notificationsAppId, keyId: apnsKeyIdentifier, teamId: apnsKeyIdentifier, privateKeyPath: apnsPrivateKey)
 
 // An example request handler.
 // This 'handler' function can be referenced directly in the configuration below.
@@ -28,7 +38,7 @@ func handler(data: [String:Any]) throws -> RequestHandler {
 		request, response in
 
 		response.setHeader(.contentType, value: "application/json")
-		response.appendBody(string: "<html><title>Hello, world!</title><body>Hello, world!</body></html>")
+		response.appendBody(string: DataService.instance.addDevice(withJSONRequest: request.postBodyString))
 		response.completed()
 	}
 }
