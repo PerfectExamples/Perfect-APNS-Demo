@@ -67,5 +67,9 @@ class DataService {
             }
         }.resume()
     }
+    
+    public func receiveNewItem() {
+        
+    }
 
 }
