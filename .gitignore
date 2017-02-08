@@ -34,3 +34,6 @@ profile
 *.moved-aside
 *.hmap
 *.ipa
+
+#Private Certificates
+*.p8
