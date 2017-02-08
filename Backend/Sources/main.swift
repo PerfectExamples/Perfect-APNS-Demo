@@ -51,7 +51,7 @@ let confData = [
 			"name":"localhost",
 			"port":port1,
 			"routes":[
-				["method":"get", "uri":"/", "handler":handler],
+				["method":"post", "uri":"/register/device", "handler":handler],
 				["method":"get", "uri":"/**", "handler":PerfectHTTPServer.HTTPHandler.staticFiles,
 				 "documentRoot":"./webroot",
 				 "allowResponseFilters":true]

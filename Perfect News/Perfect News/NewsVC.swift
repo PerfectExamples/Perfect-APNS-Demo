@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  FirstViewController.swift
 //  Perfect News
 //
 //  Created by Ryan Collins on 2/3/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class NewsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
