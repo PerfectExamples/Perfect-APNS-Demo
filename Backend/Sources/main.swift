@@ -26,10 +26,9 @@ import PerfectHTTPServer
 func handler(data: [String:Any]) throws -> RequestHandler {
 	return {
 		request, response in
-		// Respond with a simple message.
-		response.setHeader(.contentType, value: "text/html")
+
+		response.setHeader(.contentType, value: "application/json")
 		response.appendBody(string: "<html><title>Hello, world!</title><body>Hello, world!</body></html>")
-		// Ensure that response.completed() is called when your processing is done.
 		response.completed()
 	}
 }
@@ -38,7 +37,7 @@ func handler(data: [String:Any]) throws -> RequestHandler {
 // This example configuration shows how to launch one or more servers 
 // using a configuration dictionary.
 
-let port1 = 8080, port2 = 8181
+let port = 8181
 
 let confData = [
 	"servers": [
@@ -49,7 +48,7 @@ let confData = [
 		//	* Performs content compression on outgoing data when appropriate.
 		[
 			"name":"localhost",
-			"port":port1,
+			"port":port,
 			"routes":[
 				["method":"post", "uri":"/register/device", "handler":handler],
 				["method":"get", "uri":"/**", "handler":PerfectHTTPServer.HTTPHandler.staticFiles,
@@ -64,16 +63,6 @@ let confData = [
 				]
 			]
 		],
-		// Configuration data for another server which:
-		//	* Redirects all traffic back to the first server.
-		[
-			"name":"localhost",
-			"port":port2,
-			"routes":[
-				["method":"get", "uri":"/**", "handler":PerfectHTTPServer.HTTPHandler.redirect,
-				 "base":"http://localhost:\(port1)"]
-			]
-		]
 	]
 ]
 
