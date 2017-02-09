@@ -20,6 +20,11 @@ class DataService {
         }
     }
     
+    public func add(_ item: NewsItem) {
+        self._loadedNews.append(item)
+        NotificationCenter.default.post(Notification(name: .itemsLoaded))
+    }
+    
     public func registerDeviceToken(deviceToken: String) {
         
         let urlPath = "\(apiEndpoint)/register/device"

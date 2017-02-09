@@ -41,6 +41,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print("Received remote notification)")
         dump(userInfo)
+        notificationReceived(notification: userInfo)
+    }
+    
+    private func getAlert(notification: [AnyHashable:Any]) -> (String, String) {
+        let aps = notification["aps"] as? [String:AnyObject]
+        let alert = aps?["alert"] as? [String:AnyObject]
+        let title = alert?["title"] as? String
+        let body = alert?["body"] as? String
+        return (title ?? "-", body ?? "-")
+    }
+    
+    func notificationReceived(notification: [AnyHashable:Any]) {
+        let viewController = window?.rootViewController
+        let view = viewController as? NewsViewController
+//        view?.addNotification(
+//            title: getAlert(notification: notification).0,
+//            body: getAlert(notification: notification).1)
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
