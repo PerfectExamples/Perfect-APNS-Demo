@@ -53,11 +53,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func notificationReceived(notification: [AnyHashable:Any]) {
-        let viewController = window?.rootViewController
-        let view = viewController as? NewsViewController
-//        view?.addNotification(
-//            title: getAlert(notification: notification).0,
-//            body: getAlert(notification: notification).1)
+        let item = NewsItem(title: getAlert(notification: notification).0, description: getAlert(notification: notification).1, imageURL: nil)
+        DataService.instance.add(item)
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

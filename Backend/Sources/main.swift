@@ -36,28 +36,6 @@ NotificationPusher.addConfigurationAPNS(
     teamId: apnsTeamIdentifier,
     privateKeyPath: apnsPrivateKey)
 
-func index(data: [String:Any]) throws -> RequestHandler {
-    return {
-        request, response in
-        
-        response.setHeader(.contentType, value: "text/html")
-        response.appendBody(string: "Test")
-        response.completed()
-    }
-}
-
-// An example request handler.
-// This 'handler' function can be referenced directly in the configuration below.
-func handler(data: [String:Any]) throws -> RequestHandler {
-	return {
-		request, response in
-
-		response.setHeader(.contentType, value: "application/json")
-		response.appendBody(string: DataService.instance.addDevice(withJSONRequest: request.postBodyString))
-		response.completed()
-	}
-}
-
 // Configuration data for two example servers.
 // This example configuration shows how to launch one or more servers 
 // using a configuration dictionary.
@@ -75,9 +53,9 @@ let confData = [
 			"name":"localhost",
 			"port":port,
 			"routes":[
-                ["method":"get", "uri":"/", "handler":index],
-                ["method":"get", "uri":"/notify", "handler":index],
-				["method":"post", "uri":"/register/device", "handler":handler],
+                ["method":"get", "uri":"/", "handler":indexHandler],
+                ["method":"get", "uri":"/notify", "handler":indexHandler],
+				["method":"post", "uri":"/register/device", "handler":registrationHandler],
 				["method":"get", "uri":"/**", "handler":PerfectHTTPServer.HTTPHandler.staticFiles,
 				 "documentRoot":"./webroot",
 				 "allowResponseFilters":true]

@@ -35,7 +35,6 @@ class DataService {
                         dump(device)
                     } else {
                         response = "{\"success\": \"already registered\"}"
-                        notify()
                     }
                 }
             } catch {
@@ -46,7 +45,7 @@ class DataService {
         return response
     }
     
-    func notify() {
+    func notify(title: String, message: String) {
         
         var deviceTokens = [String]()
         
@@ -58,7 +57,7 @@ class DataService {
         n.pushAPNS(
             configurationName: notificationsAppId,
             deviceTokens: deviceTokens,
-            notificationItems: [.alertBody("Hello!"), .sound("default")]) {
+            notificationItems: [.alertTitle(title), .alertBody(message), .sound("default")]) {
                 responses in
                 print("\(responses)")
         }
