@@ -55,8 +55,11 @@ class DataService {
         }
         
         let n = NotificationPusher(apnsTopic: notificationsAppId)
-        n.pushIOS(configurationName: notificationsAppId, deviceTokens: deviceTokens, expiration: 10, priority: 10, notificationItems: [.alertBody("Hello!"), .sound("default")]) {
-            responses in
+        n.pushAPNS(
+            configurationName: notificationsAppId,
+            deviceTokens: deviceTokens,
+            notificationItems: [.alertBody("Hello!"), .sound("default")]) {
+                responses in
                 print("\(responses)")
         }
     }
