@@ -6,7 +6,9 @@
 //
 //
 
-import Foundation
+import PerfectLib
+import PerfectHTTP
+import PerfectHTTPServer
 
 func indexHandler(data: [String:Any]) throws -> RequestHandler {
     return {
@@ -30,7 +32,7 @@ func registrationHandler(data: [String:Any]) throws -> RequestHandler {
 
 func notificationHandler(data: [String:Any]) throws -> RequestHandler {
     return {
-        request, response instance
+        request, response in
         
         response.setHeader(.contentType, value: "text/html")
         response.appendBody(string: "Test")

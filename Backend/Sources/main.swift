@@ -54,7 +54,7 @@ let confData = [
 			"port":port,
 			"routes":[
                 ["method":"get", "uri":"/", "handler":indexHandler],
-                ["method":"get", "uri":"/notify", "handler":indexHandler],
+                ["method":"post", "uri":"/notify", "handler":notificationHandler],
 				["method":"post", "uri":"/register/device", "handler":registrationHandler],
 				["method":"get", "uri":"/**", "handler":PerfectHTTPServer.HTTPHandler.staticFiles,
 				 "documentRoot":"./webroot",
