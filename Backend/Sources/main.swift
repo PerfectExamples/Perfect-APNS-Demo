@@ -31,10 +31,20 @@ let apnsPrivateKey = "./keys/APNsAuthKey_L5PQ5652T4.p8"
 
 NotificationPusher.addConfigurationAPNS(
     name: notificationsAppId,
-    production: false, // should be false when running pre-release app in debugger
+    production: false, // should be false when running pre-release app in debugger, must be on device (emulator does not work)
     keyId: apnsKeyIdentifier,
     teamId: apnsTeamIdentifier,
     privateKeyPath: apnsPrivateKey)
+
+func index(data: [String:Any]) throws -> RequestHandler {
+    return {
+        request, response in
+        
+        response.setHeader(.contentType, value: "text/html")
+        response.appendBody(string: "Test")
+        response.completed()
+    }
+}
 
 // An example request handler.
 // This 'handler' function can be referenced directly in the configuration below.
@@ -64,11 +74,9 @@ let confData = [
 		[
 			"name":"localhost",
 			"port":port,
-//			"tlsConfig": [
-//                "certPath":"./localhost.crt",
-//                "keyPath":"./localhost.key"
-//            ],
 			"routes":[
+                ["method":"get", "uri":"/", "handler":index],
+                ["method":"get", "uri":"/notify", "handler":index],
 				["method":"post", "uri":"/register/device", "handler":handler],
 				["method":"get", "uri":"/**", "handler":PerfectHTTPServer.HTTPHandler.staticFiles,
 				 "documentRoot":"./webroot",
