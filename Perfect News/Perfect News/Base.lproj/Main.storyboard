@@ -23,8 +23,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dZ1-1a-OAA">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="518"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" id="rR4-Q2-AoR" customClass="NewsCell" customModule="Perfect_News" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -52,13 +53,34 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BmK-bh-hhl">
+                                <rect key="frame" x="0.0" y="20" width="375" height="80"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Vgm-a5-QVp">
+                                        <rect key="frame" x="102" y="20" width="170" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="AWj-Yd-f1H"/>
+                                            <constraint firstAttribute="width" constant="170" id="DdY-Hy-ha4"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.12156862745098039" green="0.19215686274509802" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Vgm-a5-QVp" firstAttribute="centerX" secondItem="BmK-bh-hhl" secondAttribute="centerX" id="3qz-H5-Dj1"/>
+                                    <constraint firstAttribute="height" constant="80" id="Hbg-wn-0Nq"/>
+                                    <constraint firstItem="Vgm-a5-QVp" firstAttribute="centerY" secondItem="BmK-bh-hhl" secondAttribute="centerY" id="SRt-OS-Z0H"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dZ1-1a-OAA" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="BfA-7x-dfr"/>
-                            <constraint firstItem="dZ1-1a-OAA" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="CZe-WD-AiB"/>
+                            <constraint firstAttribute="trailing" secondItem="BmK-bh-hhl" secondAttribute="trailing" id="Q7v-a9-45t"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="dZ1-1a-OAA" secondAttribute="bottom" id="QiD-g5-BRZ"/>
+                            <constraint firstItem="BmK-bh-hhl" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="YVP-pq-GnN"/>
                             <constraint firstAttribute="trailing" secondItem="dZ1-1a-OAA" secondAttribute="trailing" id="cA9-87-JUE"/>
+                            <constraint firstItem="dZ1-1a-OAA" firstAttribute="top" secondItem="BmK-bh-hhl" secondAttribute="bottom" id="ekP-Ht-6cO"/>
+                            <constraint firstItem="BmK-bh-hhl" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="vqt-ti-6Vp"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="News" image="first" id="acW-dT-cKf"/>
@@ -83,13 +105,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Perfect News" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="80" y="313" width="215" height="42"/>
+                                <rect key="frame" x="80" y="312.5" width="215" height="42"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="79" y="362.5" width="218.5" height="50.5"/>
+                                <rect key="frame" x="79" y="362" width="218.5" height="50.5"/>
                                 <string key="text">Demo for APNS
 Created by: Ryan Collins
 Copyright 2017 PerfectlySoft, Inc.</string>
@@ -133,6 +155,7 @@ Copyright 2017 PerfectlySoft, Inc.</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Logo" width="152" height="40"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
