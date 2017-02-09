@@ -14,8 +14,8 @@ db/
 
 #Xcode
 *~.nib
-*.xcodeproj
-*.xcworkspace
+#*.xcodeproj
+#*.xcworkspace
 DerivedData/
 build/
 build_lin/
