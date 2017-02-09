@@ -59,10 +59,10 @@ let confData = [
 		[
 			"name":"localhost",
 			"port":port,
-			"tlsConfig": [
-                "certPath":"./localhost.crt",
-                "keyPath":"./localhost.key"
-            ],
+//			"tlsConfig": [
+//                "certPath":"./localhost.crt",
+//                "keyPath":"./localhost.key"
+//            ],
 			"routes":[
 				["method":"post", "uri":"/register/device", "handler":handler],
 				["method":"get", "uri":"/**", "handler":PerfectHTTPServer.HTTPHandler.staticFiles,
