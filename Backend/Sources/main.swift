@@ -29,7 +29,14 @@ let apnsKeyIdentifier = "L5PQ5652T4"
 let apnsTeamIdentifier = "HZW5PR43M5"
 let apnsPrivateKey = "./APNsAuthKey_L5PQ5652T4.p8"
 
-NotificationPusher.addConfigurationIOS(name: notificationsAppId, keyId: apnsKeyIdentifier, teamId: apnsKeyIdentifier, privateKeyPath: apnsPrivateKey)
+//NotificationPusher.addConfigurationIOS(name: notificationsAppId, keyId: apnsKeyIdentifier, teamId: apnsKeyIdentifier, privateKeyPath: apnsPrivateKey)
+
+NotificationPusher.addConfigurationAPNS(
+    name: notificationsAppId,
+    production: Bool, // should be false when running pre-release app in debugger
+    keyId: apnsKeyIdentifier,
+    teamId: apnsTeamIdentifier,
+    privateKeyPath: apnsPrivateKey)
 
 // An example request handler.
 // This 'handler' function can be referenced directly in the configuration below.
