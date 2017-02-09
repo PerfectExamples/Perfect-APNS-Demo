@@ -24,7 +24,8 @@ class NewsCell: UITableViewCell {
     }
     
     func configureCell(_ item: NewsItem) {
-        
+        let label = "\(item.title): \(item.description)"
+        self.notificationLabel.text? = label
     }
 
 }
