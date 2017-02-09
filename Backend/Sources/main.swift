@@ -26,8 +26,8 @@ import PerfectNotifications
 let notificationsAppId = "com.ryanmcollins.Perfect-News"
 
 let apnsKeyIdentifier = "L5PQ5652T4"
-let apnsTeamIdentifier = "HZW5PR43M5"
-let apnsPrivateKey = "./APNsAuthKey_L5PQ5652T4.p8"
+let apnsTeamIdentifier = "8VF4S3W85G"
+let apnsPrivateKey = "./keys/APNsAuthKey_L5PQ5652T4.p8"
 
 NotificationPusher.addConfigurationAPNS(
     name: notificationsAppId,
