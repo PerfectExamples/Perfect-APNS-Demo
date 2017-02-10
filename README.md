@@ -1,5 +1,4 @@
 # Apple Push Notification Service (APNS) Demo
-## README NEEDS EDITING
 
 <p align="center">
     <a href="http://perfect.org/get-involved.html" target="_blank">
