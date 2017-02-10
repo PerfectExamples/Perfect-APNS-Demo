@@ -18,7 +18,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     
-        NotificationCenter.default.addObserver(self, selector: #selector(onNewsItemsLoaded), name: .itemsLoaded, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveNotification(notification:)), name: .itemsLoaded, object: nil)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -34,7 +34,18 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
     
-    func onNewsItemsLoaded() {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    /* MARK: Nofitication & Alert Handlers */
+    func receiveNotification(notification: Notification) {
+        if let userInfo = notification.userInfo as? [String: String] {
+            if let title = userInfo["title"], let message = userInfo["message"] {
+                notify(title: title, message: message)
+            }
+        }
+        
         tableView.reloadData()
     }
     
@@ -44,6 +55,8 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.present(alert, animated: true, completion: nil)
     }
     
+    
+    /* MARK: Table View */
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -63,6 +76,12 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.configureCell(item)
             return cell
         }
+    }
+    
+    
+    /* MARK: Button Actions */
+    @IBAction func clearRecentNews(_ sender: Any) {
+        DataService.instance.clearNews()
     }
 }
 

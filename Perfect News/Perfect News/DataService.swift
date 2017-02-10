@@ -22,7 +22,7 @@ class DataService {
     
     public func add(_ item: NewsItem) {
         self._loadedNews.append(item)
-        NotificationCenter.default.post(Notification(name: .itemsLoaded))
+        NotificationCenter.default.post(name: .itemsLoaded, object: DataService.instance, userInfo: ["title":"\(item.title)", "message":"\(item.description)"])
     }
     
     public func registerDeviceToken(deviceToken: String) {
@@ -73,8 +73,9 @@ class DataService {
         }.resume()
     }
     
-    public func receiveNewItem() {
-        
+    func clearNews() {
+        self._loadedNews.removeAll()
+        NotificationCenter.default.post(Notification(name: .itemsLoaded))
     }
 
 }
