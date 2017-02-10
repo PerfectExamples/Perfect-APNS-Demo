@@ -95,7 +95,7 @@ let apnsTeamIdentifier = "8VF4S3W85G"
 let apnsPrivateKey = "./keys/APNsAuthKey_L5PQ5652T4.p8"
 ```
 
-`apnsKeyIdentifier` should be the same as the identifier inside of _.p8 on the keyfile you downloaded. i.e. `"APNsAuthKey_L5PQ5652T4.p8"` becomes `"L5PQ5652T4"`. `apnsTeamIdentifier` should be your team identifier. If you do not know what this is, you can find it at [https://developer.apple.com/account/#/membership/](https://developer.apple.com/account/#/membership/). Finally, you need to specify the path to your keyfile. If you followed my steps above, that should mean simply changing the filename in the path above. 
+`apnsKeyIdentifier` should be the same as the identifier inside of _.p8 on the keyfile you downloaded. i.e. `"APNsAuthKey_L5PQ5652T4.p8"` becomes `"L5PQ5652T4"`. `apnsTeamIdentifier` should be your team identifier. If you do not know what this is, you can find it at [https://developer.apple.com/account/#/membership/](https://developer.apple.com/account/#/membership/). Finally, you need to specify the path to your keyfile. If you followed the steps above, that should mean simply changing the filename in the path above. 
 
 Once you have all that information changed, you are ready to start the server:
 
