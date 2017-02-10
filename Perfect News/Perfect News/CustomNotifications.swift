@@ -10,7 +10,5 @@ import Foundation
 
 extension Notification.Name {
     static let apiServerUnreachable = Notification.Name("apiServerUnreachable")
-    static let addFailure = Notification.Name("addFailure")
-    static let addSuccessful = Notification.Name("addSuccessful")
     static let itemsLoaded = Notification.Name("itemsLoaded")
 }

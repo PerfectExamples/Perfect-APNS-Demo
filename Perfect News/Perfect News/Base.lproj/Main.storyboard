@@ -95,7 +95,7 @@
                             <constraint firstItem="BmK-bh-hhl" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="vqt-ti-6Vp"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="News" image="first" selectedImage="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="News" image="news" selectedImage="news" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="tableView" destination="dZ1-1a-OAA" id="vrg-08-eDw"/>
                     </connections>
@@ -140,7 +140,7 @@ Copyright 2017 PerfectlySoft, Inc.</string>
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="About" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="About" image="about" selectedImage="about" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -168,7 +168,7 @@ Copyright 2017 PerfectlySoft, Inc.</string>
     </scenes>
     <resources>
         <image name="Logo" width="152" height="40"/>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="about" width="30" height="30"/>
+        <image name="news" width="30" height="30"/>
     </resources>
 </document>

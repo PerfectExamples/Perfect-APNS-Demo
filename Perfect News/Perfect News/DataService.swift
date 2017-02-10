@@ -55,20 +55,17 @@ class DataService {
                 guard let data = data else {
                     return
                 }
+                
                 guard let jsonArr = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
                     return
                 }
                 
-                
                 if let error = jsonArr["error"] {
                     print("An error occurred: \(error)")
-                    NotificationCenter.default.post(Notification(name: .addFailure))
-                } else {
-                    NotificationCenter.default.post(Notification(name: .addSuccessful))
                 }
+                
             } catch let err as NSError {
                 print(err.debugDescription)
-                NotificationCenter.default.post(Notification(name: .addFailure))
             }
         }.resume()
     }
