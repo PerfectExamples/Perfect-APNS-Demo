@@ -149,7 +149,9 @@ To make a test notification, visit [http://0.0.0.0:8181/](http://0.0.0.0:8181/) 
 
 ![APNS Demo Backend](https://github.com/PerfectExamples/Perfect-APNS-Demo/raw/master/Supporting/notification-sender.png)
 
-Fill out the form fields, and press the Notify! Button to send a test notification. 
+Fill out the form fields, and press the Notify! Button to send a test notification. You should get a popup notification on success:
+
+![APNS Push Sucess](https://github.com/PerfectExamples/Perfect-APNS-Demo/raw/master/Supporting/pusher-success.png)
 
 The backend has three routes:
 
