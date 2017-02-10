@@ -1,3 +1,4 @@
+
 var ajaxRequest;
 
 $('form').on('submit', function(form) {
@@ -19,15 +20,14 @@ $('form').on('submit', function(form) {
 		            data: JSON.stringify(json)
 		        });
 		
-		      /*  request cab be abort by ajaxRequest.abort() */
-		
+			/* Alert the user when finished without error */
 		     ajaxRequest.done(function (response, textStatus, jqXHR){
 		          alert("Sucessfully Submitted");
 		     });
 		
-		     /* On failure of request this function will be called  */
+		     /* If the call fails  */
 		     ajaxRequest.fail(function (jqXHR, textStatus, errorThrown){
-		        // Log the error to the console
+		        // Log the error
 		        console.error(
 		            "The following error occurred: "+
 		            textStatus, errorThrown
