@@ -45,7 +45,7 @@ class DataService {
         return response
     }
     
-    func notify(title: String, message: String) -> Bool {
+    func notify(title: String, message: String) {
         
         var deviceTokens = [String]()
         
@@ -59,11 +59,7 @@ class DataService {
             deviceTokens: deviceTokens,
             notificationItems: [.alertTitle(title), .alertBody(message), .sound("default")]) {
                 responses in
-                return parse(response: responses)
+                print("\(responses)")
         }
-    }
-    
-    func parse(response: String) -> Bool {
-        return response.range(of: "200") != nil
     }
 }

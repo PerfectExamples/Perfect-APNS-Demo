@@ -18,12 +18,11 @@ struct Notifier {
             let dict = try json.jsonDecode() as! [String: String]
             
             if let title = dict["title"], let message = dict["message"] {
-                if DataService.instance.notify(title: title, message: message) {
-                    response = "{\"success\": true}"
-                }
+                DataService.instance.notify(title: title, message: message)
+                response = "{\"success\": true}"
             }
         } catch {
-            print("Failed to get shipment information for tracking number")
+            print("Failed to decode JSON")
         }
         
         return response

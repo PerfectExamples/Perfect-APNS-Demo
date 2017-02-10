@@ -8,17 +8,15 @@ $('form').on('submit', function(form) {
      
      if (title != "" && msg != "") {
 	    
-	    var uri = "/notify/?title=";
-	    uri += title;
-	    uri += "message=";
-	    uri += msg;
-	    
+	    var uri = "/notify";
 	    var json = {"title": title, "message": msg};
 	     
 		ajaxRequest = $.ajax({
 		            url: uri,
-		            type: "post",
-		            data: json
+		            type: "POST",
+		            contentType: "application/json; charset=utf-8",
+					dataType: "json",
+		            data: JSON.stringify(json)
 		        });
 		
 		      /*  request cab be abort by ajaxRequest.abort() */
@@ -36,7 +34,8 @@ $('form').on('submit', function(form) {
 		        );
 		    });
 	     
-	     $('.sendbar-input').val('');
+	     $('#exampleInputTitle').val('');
+		 $('#exampleInputMessage').val('');
      }
      
      
