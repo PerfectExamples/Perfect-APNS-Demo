@@ -62,17 +62,17 @@ The master branch of this project currently compiles with **Xcode 8.2/8.3 beta 2
 
 Prior to running the API, you must add your own notifications key from the Apple Developer Portal and change the identifiers to match. If you are not familiar with this process and/or do not already have one, head over to [https://developer.apple.com/account](https://developer.apple.com/account) and click on Certificates, Identifiers, & Profiles:
 
-![Apple Developer Portal](https://github.com/PerfectExamples/Perfect-APNS-Demo/raw/master/Supporting/certificates.png)
+![Apple Developer Portal](https://raw.githubusercontent.com/PerfectExamples/Perfect-APNS-Demo/master/supporting/certificates.png)
 
 From there, click on the "+" button in the upper right hand corner, which will take you to this screen:
 
-![Add New Developer APNS Key](https://github.com/PerfectExamples/Perfect-APNS-Demo/raw/master/Supporting/new-key.png)
+![Add New Developer APNS Key](https://raw.githubusercontent.com/PerfectExamples/Perfect-APNS-Demo/master/supporting/new-key.png)
 
 Make sure to select the box that says "Apple Push Notification Authentication Key (Sandbox & Production)" (Key **NOT** SSL)
 
 From there, you can simply download the key:
 
-![Download APNS Key](https://github.com/PerfectExamples/Perfect-APNS-Demo/raw/master/Supporting/download-key.png)
+![Download APNS Key](https://raw.githubusercontent.com/PerfectExamples/Perfect-APNS-Demo/master/supporting/download-key.png)
 
 BE SURE TO DOWNLOAD AND RETAIN THE FILE, AS THIS IS THE ONLY OPPORTUNITY YOU HAVE TO DOWNLOAD IT. If you lose it, you will have to revoke it and generate a new one. 
 
@@ -116,7 +116,7 @@ This means the server is running and waiting for connections. Access the routes 
 
 If you choose to generate an Xcode Project by running `swift package generate-xcodeproj` inside the ./Backend/ directory, you **MUST** change to the executable target **AND** setup a custom working directory wherever you cloned the project. 
 
-![Proper Xcode Setup](https://github.com/PerfectExamples/Perfect-APNS-Demo/raw/master/Supporting/xcode.png)
+![Proper Xcode Setup](https://raw.githubusercontent.com/PerfectExamples/Perfect-APNS-Demo/master/supporting/xcode.png)
 
 ## Testing
 
@@ -147,11 +147,11 @@ This means that the device has been successfully registered, and the backend now
 
 To make a test notification, visit [http://0.0.0.0:8181/](http://0.0.0.0:8181/) in your browser. It should look like this:
 
-![APNS Demo Backend](https://github.com/PerfectExamples/Perfect-APNS-Demo/raw/master/Supporting/notification-sender.png)
+![APNS Demo Backend](https://raw.githubusercontent.com/PerfectExamples/Perfect-APNS-Demo/master/supporting/notification-sender.png)
 
 Fill out the form fields, and press the Notify! Button to send a test notification. You should get a popup notification on success:
 
-![APNS Push Sucess](https://github.com/PerfectExamples/Perfect-APNS-Demo/raw/master/Supporting/pusher-success.png)
+![APNS Push Sucess](https://raw.githubusercontent.com/PerfectExamples/Perfect-APNS-Demo/master/supporting/pusher-success.png)
 
 The backend has three routes:
 
